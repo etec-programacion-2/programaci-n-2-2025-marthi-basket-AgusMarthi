@@ -25,6 +25,7 @@ class Player(
         println("Habilidades despues de la mejora: $habilidades")
     }
     override fun toString(): String {
-        return "\n-- Nombre = $nombre | Edad = $edad | Altura = $altura | Posición = $posicion\n${habilidades.toString()}"
+        val promedio = (habilidades.definicion + habilidades.tiro + habilidades.defensa + habilidades.velocidad + habilidades.bloqueo)/5
+        return "\n-- Nombre = $nombre | Edad = $edad | Altura = $altura | Posición = $posicion\n${habilidades.toString()} | Promedio = $promedio"
     }
 }
