@@ -19,17 +19,23 @@ class Team(val name: String) {
     }
 
     fun promedioAtaque(equipo: Team): Double{
-        val promedio = 0.0
+        var promedio = 0.0
         for (i in 0 until 5){
-            var player = equipo.plantilla.get(i)
-            var ataque = (player.habilidades.tiro + player.habilidades.definicion)/2
-            promedio + ataque
+            val player = equipo.plantilla.get(i)
+            val ataque = (player.habilidades.tiro + player.habilidades.definicion)/2
+            promedio += ataque
         }
         return promedio/5
     }
 
-    fun promedioDefensa(){
-
+    fun promedioDefensa(equipo: Team): Double{
+        var promedio = 0.0
+        for (i in 0 until 5){
+            val player = equipo.plantilla.get(i)
+            val defensa = (player.habilidades.defensa + player.habilidades.bloqueo)/2
+            promedio += defensa
+        }
+        return promedio/5
     }
 
     override fun toString(): String {
