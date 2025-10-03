@@ -12,5 +12,14 @@ class Match (
     val marcadorV : Int
         get() = puntosVisitante
 
+    fun simularPartido(partido : Match){
+        val ataqueLocal = partido.equipoLocal.promedioAtaque()/partido.equipoVisitante.promedioDefensa() + 0.05
+        val ataqueVisitante = partido.equipoVisitante.promedioAtaque()/partido.equipoLocal.promedioDefensa()
+        val diferencia = (ataqueLocal - ataqueVisitante) * 10
+
+
+    }
+
+
 
 }
