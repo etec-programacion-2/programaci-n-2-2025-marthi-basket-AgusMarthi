@@ -12,7 +12,5 @@ class Match (
     val marcadorV : Int
         get() = puntosVisitante
 
-    fun simularPartido(){
 
-    }
 }
