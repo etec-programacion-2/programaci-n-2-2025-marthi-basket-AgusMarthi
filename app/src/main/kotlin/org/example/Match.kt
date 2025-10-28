@@ -49,6 +49,10 @@ class Match (
         println("${equipoLocal.name} $marcadorL-$marcadorV ${equipoVisitante.name}")
     }
 
+    override fun toString(): String {
+        return ("${equipoLocal.name} vs ${equipoVisitante.name}")
+    }
+
     /**
     val lakers = Team("Lakers")
     lakers.seleccJugador(Player(25, "LeBron", 2.06, PlayerPosition.ALERO, PlayerSkills(85, 75, 80, 70, 90)))
