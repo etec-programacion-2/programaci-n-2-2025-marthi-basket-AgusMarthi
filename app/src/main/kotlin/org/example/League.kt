@@ -10,13 +10,26 @@ class League (val nombre : String) {
         get() = calendario.toList()
 
     fun generarCalendario(){
-        for (local in 0 until calendarioPartidos.size){
-            for (visitante in 0 until calendarioPartidos.size){
+        for (local in 0 until listaEquipos.size){
+            for (visitante in 0 until listaEquipos.size){
                 if (local != visitante){
-
+                    calendario.add(Match(listaEquipos[local], listaEquipos[visitante]))
                 }
             }
         }
+    }
+
+    fun simularTemporada(){
+        val tablaDePosiciones : MutableList<MutableList<String>> = mutableListOf()
+        for (fecha in 0 until calendarioPartidos.size){
+            val partido = calendarioPartidos[fecha]
+            println(" $partido \n ${partido.simularPartido()}")
+
+        }
+    }
+
+    fun generarTablaDePosiciones(){
+
     }
 
 }

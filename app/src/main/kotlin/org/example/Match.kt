@@ -23,29 +23,34 @@ class Match (
         val ataqueVisitante = promedioPuntosVisita.roundToInt()
         val posibleMarcadorLocal : MutableList<Int> = mutableListOf()
         val posibleMarcadorVisitante : MutableList<Int> = mutableListOf()
-        if (ataqueLocal > ataqueVisitante) {
-            posibleMarcadorLocal.add(ataqueLocal+10)
-            posibleMarcadorLocal.add(ataqueLocal-20)
-            posibleMarcadorVisitante.add(ataqueLocal-10)
-            posibleMarcadorVisitante.add(ataqueVisitante-10)
-        } else if(ataqueLocal < ataqueVisitante){
-            posibleMarcadorVisitante.add(ataqueVisitante+10)
-            posibleMarcadorVisitante.add(ataqueVisitante-20)
-            posibleMarcadorLocal.add(ataqueLocal-10)
-            posibleMarcadorLocal.add(ataqueVisitante-10)
-        } else {
-            posibleMarcadorVisitante.add(ataqueVisitante+10)
-            posibleMarcadorVisitante.add(ataqueVisitante-10)
-            posibleMarcadorLocal.add(ataqueLocal+10)
-            posibleMarcadorLocal.add(ataqueLocal-10)
+        when {
+            ataqueLocal > ataqueVisitante -> {
+                posibleMarcadorLocal.add(ataqueLocal + 10)
+                posibleMarcadorLocal.add(ataqueLocal - 20)
+                posibleMarcadorVisitante.add(ataqueLocal - 10)
+                posibleMarcadorVisitante.add(ataqueVisitante - 10)
+            }
+            ataqueLocal < ataqueVisitante -> {
+                posibleMarcadorVisitante.add(ataqueVisitante + 10)
+                posibleMarcadorVisitante.add(ataqueVisitante - 20)
+                posibleMarcadorLocal.add(ataqueLocal - 10)
+                posibleMarcadorLocal.add(ataqueVisitante - 10)
+            }
+            else -> {
+                posibleMarcadorVisitante.add(ataqueVisitante + 10)
+                posibleMarcadorVisitante.add(ataqueVisitante - 10)
+                posibleMarcadorLocal.add(ataqueLocal + 10)
+                posibleMarcadorLocal.add(ataqueLocal - 10)
+            }
         }
         posibleMarcadorLocal.sort()
         posibleMarcadorVisitante.sort()
-        println(posibleMarcadorLocal)
-        println(posibleMarcadorVisitante)
 
         puntosLocal = Random.nextInt(posibleMarcadorLocal[0], posibleMarcadorLocal[1])
         puntosVisitante = Random.nextInt(posibleMarcadorVisitante[0], posibleMarcadorVisitante[1])
+        if (puntosLocal == puntosVisitante){
+            this.simularPartido()
+        }
         println("${equipoLocal.name} $marcadorL-$marcadorV ${equipoVisitante.name}")
     }
 
