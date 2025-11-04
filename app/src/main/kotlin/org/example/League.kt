@@ -19,17 +19,16 @@ class League (val nombre : String) {
         }
     }
 
-    fun simularTemporada(){
-        val tablaDePosiciones : MutableList<MutableList<String>> = mutableListOf()
+    val tablaDePosiciones : MutableList<MutableList<String>> = mutableListOf()
+
+    fun jugarTemporada(simulador: MatchSimulator){
         for (fecha in 0 until calendarioPartidos.size){
             val partido = calendarioPartidos[fecha]
-            println(" $partido \n ${partido.simularPartido()}")
-
+            println(" $partido \n ${simulador.simularPartido(partido)}")
         }
-    }
-
-    fun generarTablaDePosiciones(){
-
+        for (equipo in 0 until listaEquipos.size){
+            listaEquipos
+        }
     }
 
 }

@@ -15,47 +15,13 @@ class Match (
     val marcadorV : Int
         get() = puntosVisitante
 
-    fun simularPartido(){
-        val partido = this
-        val promedioPuntosLocal = (partido.equipoLocal.promedioAtaque()/partido.equipoVisitante.promedioDefensa() + 0.05) * 100
-        val ataqueLocal = promedioPuntosLocal.roundToInt()
-        val promedioPuntosVisita = (partido.equipoVisitante.promedioAtaque()/partido.equipoLocal.promedioDefensa()) * 100
-        val ataqueVisitante = promedioPuntosVisita.roundToInt()
-        val posibleMarcadorLocal : MutableList<Int> = mutableListOf()
-        val posibleMarcadorVisitante : MutableList<Int> = mutableListOf()
-        when {
-            ataqueLocal > ataqueVisitante -> {
-                posibleMarcadorLocal.add(ataqueLocal + 10)
-                posibleMarcadorLocal.add(ataqueLocal - 20)
-                posibleMarcadorVisitante.add(ataqueLocal - 10)
-                posibleMarcadorVisitante.add(ataqueVisitante - 10)
-            }
-            ataqueLocal < ataqueVisitante -> {
-                posibleMarcadorVisitante.add(ataqueVisitante + 10)
-                posibleMarcadorVisitante.add(ataqueVisitante - 20)
-                posibleMarcadorLocal.add(ataqueLocal - 10)
-                posibleMarcadorLocal.add(ataqueVisitante - 10)
-            }
-            else -> {
-                posibleMarcadorVisitante.add(ataqueVisitante + 10)
-                posibleMarcadorVisitante.add(ataqueVisitante - 10)
-                posibleMarcadorLocal.add(ataqueLocal + 10)
-                posibleMarcadorLocal.add(ataqueLocal - 10)
-            }
+        override fun toString(): String {
+            return ("${equipoLocal.name} vs ${equipoVisitante.name}")
         }
-        posibleMarcadorLocal.sort()
-        posibleMarcadorVisitante.sort()
-
-        puntosLocal = Random.nextInt(posibleMarcadorLocal[0], posibleMarcadorLocal[1])
-        puntosVisitante = Random.nextInt(posibleMarcadorVisitante[0], posibleMarcadorVisitante[1])
-        if (puntosLocal == puntosVisitante){
-            this.simularPartido()
-        }
-        println("${equipoLocal.name} $marcadorL-$marcadorV ${equipoVisitante.name}")
+    fun modificarPuntos(pl: Int, pv: Int){
+        puntosLocal + pl
+        puntosVisitante +pv
     }
-
-    override fun toString(): String {
-        return ("${equipoLocal.name} vs ${equipoVisitante.name}")
     }
 
     /**
@@ -72,10 +38,5 @@ class Match (
     bulls.seleccJugador(Player(16, "Juanb", 1.95, PlayerPosition.ALERO, PlayerSkills(62, 73, 73, 52, 65)))
     bulls.seleccJugador(Player(15, "Rami", 1.80, PlayerPosition.ESCOLTA, PlayerSkills(90, 80, 78, 75, 80)))
     bulls.seleccJugador(Player(16, "Yo", 1.80, PlayerPosition.BASE, PlayerSkills(86, 77, 80, 62, 80)))
-
-    val partido = Match(lakers, bulls)
-    partido.simularPartido()
-
     */
 
-}

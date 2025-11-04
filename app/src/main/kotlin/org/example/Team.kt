@@ -16,6 +16,8 @@ class Team(val name: String) {
             println("No se puede seleccionar más jugadores. Límite de 5 jugadores alcanzado para ${name}")
         }
     }
+    var victorias = 0
+    var derrotas = 0
 
     fun promedioAtaque(): Double{
         var promedio = 0.0
