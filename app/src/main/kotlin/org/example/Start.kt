@@ -56,7 +56,7 @@ class Start (val leagues : List<League>){
                 println("  \n ¿JUGAR DE NUEVO?\n ")
                 print("\n (S/N) >> ")
                 leer()
-                if (opcion.toString().lowercase() == "S"){
+                if (opcion.toString().lowercase() == "s"){
                     menuJugar()
                 }
                 else gameOver()
@@ -141,9 +141,9 @@ class Start (val leagues : List<League>){
                 equipoL = liga.listaEquipos[x]
                 return
             }
-            println("\n- Por favor seleccione una opción correcta -\n")
-            menuEquipoL()
         }
+        println("\n- Por favor seleccione una opción correcta -\n")
+        menuEquipoL()
     }
 
     fun menuEquipoV(){
@@ -174,8 +174,8 @@ class Start (val leagues : List<League>){
                 }
             }
         }
-            println("\n- Por favor seleccione una opción correcta -\n")
-            menuEquipoV()
+        println("\n- Por favor seleccione una opción correcta -\n")
+        menuEquipoV()
     }
     fun gameOver(){
         println("""
