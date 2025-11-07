@@ -9,11 +9,18 @@ class League (val nombre : String) {
     val calendarioPartidos: List<Match>
         get() = calendario.toList()
 
+    fun agregarEquipos(teams: MutableList<Team>){
+        for (team in teams){
+            equipos.add(team)
+        }
+    }
+
     fun generarCalendario(){
-        for (local in 0 until listaEquipos.size){
-            for (visitante in 0 until listaEquipos.size){
-                if (local != visitante){
-                    calendario.add(Match(listaEquipos[local], listaEquipos[visitante]))
+        calendario.clear() // Limpiar calendario existente
+        for (local in listaEquipos) {
+            for (visitante in listaEquipos) {
+                if (local != visitante) {
+                    calendario.add(Match(local, visitante))
                 }
             }
         }
@@ -21,13 +28,22 @@ class League (val nombre : String) {
 
     val tablaDePosiciones : MutableList<MutableList<String>> = mutableListOf()
 
-    fun jugarTemporada(simulador: MatchSimulator){
-        for (fecha in 0 until calendarioPartidos.size){
-            val partido = calendarioPartidos[fecha]
-            println(" $partido \n ${simulador.simularPartido(partido)}")
+    fun jugarTemporada(simulador: MatchSimulator) {
+        tablaDePosiciones.clear()
+        for (fecha in 0 until calendarioPartidos.size) {
+            println("Partido $fecha\n")
+            simulador.simularPartido(calendarioPartidos[fecha])
         }
-        for (equipo in 0 until listaEquipos.size){
-            listaEquipos
+        for (equipo in listaEquipos) {
+            val resultado: MutableList<String> = mutableListOf(equipo.name, "${equipo.victorias}", "${equipo.derrotas}")
+            tablaDePosiciones.add(resultado)
+        }
+        tablaDePosiciones.sortByDescending { it[1].toInt() }
+    }
+    fun mostrarTabla(){
+        println("|  POS  | EQUIPO                  |  V  |  D  |")
+        for (i in 0 until tablaDePosiciones.size){
+            println("|   ${i+1}   | ${tablaDePosiciones[i][0]}   | ${tablaDePosiciones[i][1]}  | ${tablaDePosiciones[i][2]}  |")
         }
     }
 

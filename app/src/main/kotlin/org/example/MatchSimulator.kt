@@ -3,7 +3,7 @@ package org.example
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-class MatchSimulator (val partido: Match){
+class MatchSimulator{
 
     fun simularPartido(partido: Match){
         val promedioPuntosLocal = (partido.equipoLocal.promedioAtaque()/partido.equipoVisitante.promedioDefensa() + 0.05) * 100
@@ -35,17 +35,17 @@ class MatchSimulator (val partido: Match){
         posibleMarcadorLocal.sort()
         posibleMarcadorVisitante.sort()
 
-        val puntosLocal = Random.nextInt(posibleMarcadorLocal[0], posibleMarcadorLocal[1])
-        val puntosVisitante = Random.nextInt(posibleMarcadorVisitante[0], posibleMarcadorVisitante[1])
+        val puntosL = Random.nextInt(posibleMarcadorLocal[0], posibleMarcadorLocal[1])
+        val puntosV = Random.nextInt(posibleMarcadorVisitante[0], posibleMarcadorVisitante[1])
 
-        partido.modificarPuntos(puntosLocal, puntosVisitante)
+        partido.modificarPuntos(puntosL, puntosV)
 
         when {
-            puntosLocal < puntosVisitante -> {
+            puntosL < puntosV -> {
                 partido.equipoVisitante.victorias++
                 partido.equipoLocal.derrotas++
             }
-            puntosLocal > puntosVisitante -> {
+            puntosL > puntosV -> {
                 partido.equipoVisitante.derrotas++
                 partido.equipoLocal.victorias++
             }

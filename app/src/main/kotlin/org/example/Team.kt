@@ -1,6 +1,10 @@
 package org.example
 
 class Team(val name: String) {
+
+    var victorias = 0
+    var derrotas = 0
+
     // Colección privada de jugadores
     private val jugadores: MutableList<Player> = mutableListOf()
 
@@ -9,15 +13,16 @@ class Team(val name: String) {
         get() = jugadores.toList()
 
     // El val plantilla solo se puede modificar por medio de la private var jugadores
-    fun seleccJugador(jugador: Player) {
-        if (jugadores.size < 5) {
-            jugadores.add(jugador)
-        } else {
-            println("No se puede seleccionar más jugadores. Límite de 5 jugadores alcanzado para ${name}")
+    fun seleccJugadores(players: MutableList<Player>) {
+        for (player in players){
+            if (jugadores.size < 5) {
+                jugadores.add(player)
+            } else {
+                println("No se puede seleccionar más jugadores. Límite de 5 jugadores alcanzado para ${name}")
+            }
         }
     }
-    var victorias = 0
-    var derrotas = 0
+
 
     fun promedioAtaque(): Double{
         var promedio = 0.0
@@ -40,7 +45,7 @@ class Team(val name: String) {
     }
 
     override fun toString(): String {
-        return "$plantilla"
+        return "PLANTILLA: $plantilla \n--------------------------------------------------------------------------------------------------------\n | PROMEDIO OFENSIVO: ${this.promedioAtaque()} | PROMEDIO DEFENSIVO: ${this.promedioDefensa()}"
     }
 
 }
