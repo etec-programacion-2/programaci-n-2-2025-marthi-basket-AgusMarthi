@@ -12,6 +12,7 @@ class MatchSimulator{
         val ataqueVisitante = promedioPuntosVisita.roundToInt()
         val posibleMarcadorLocal : MutableList<Int> = mutableListOf()
         val posibleMarcadorVisitante : MutableList<Int> = mutableListOf()
+        var ganador = ""
         when {
             ataqueLocal > ataqueVisitante -> {
                 posibleMarcadorLocal.add(ataqueLocal + 10)
@@ -44,13 +45,19 @@ class MatchSimulator{
             puntosL < puntosV -> {
                 partido.equipoVisitante.victorias++
                 partido.equipoLocal.derrotas++
+                ganador = partido.equipoVisitante.name.uppercase()
             }
             puntosL > puntosV -> {
                 partido.equipoVisitante.derrotas++
                 partido.equipoLocal.victorias++
+                ganador = partido.equipoLocal.name.uppercase()
             }
-            else -> this.simularPartido(partido)
+            else -> {
+                this.simularPartido(partido)
+                return
+            }
+
         }
-        println("${partido.equipoLocal.name} ${partido.marcadorL}-${partido.marcadorV} ${partido.equipoVisitante.name}")
+        println("${partido.equipoLocal.name} | ${partido.marcadorL}\n============================\n${partido.equipoVisitante.name} | ${partido.marcadorV} \n\n El equipo ganador es: $ganador")
     }
 }

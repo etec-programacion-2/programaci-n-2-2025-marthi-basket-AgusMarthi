@@ -31,7 +31,7 @@ class League (val nombre : String) {
     fun jugarTemporada(simulador: MatchSimulator) {
         tablaDePosiciones.clear()
         for (fecha in 0 until calendarioPartidos.size) {
-            println("Partido $fecha\n")
+            println("Partido ${fecha+1}")
             simulador.simularPartido(calendarioPartidos[fecha])
         }
         for (equipo in listaEquipos) {
@@ -41,9 +41,18 @@ class League (val nombre : String) {
         tablaDePosiciones.sortByDescending { it[1].toInt() }
     }
     fun mostrarTabla(){
+        println("""  
+            ═════════════════════════════════════
+            ▓        TABLA DE POSICIONES        ▓                                          
+            ═════════════════════════════════════
+            
+            
+        """.trimMargin())
+        println("═══════════════════════════════════════════════")
         println("|  POS  | EQUIPO                  |  V  |  D  |")
         for (i in 0 until tablaDePosiciones.size){
             println("|   ${i+1}   | ${tablaDePosiciones[i][0]}   | ${tablaDePosiciones[i][1]}  | ${tablaDePosiciones[i][2]}  |")
+            println("═══════════════════════════════════════════════")
         }
     }
 

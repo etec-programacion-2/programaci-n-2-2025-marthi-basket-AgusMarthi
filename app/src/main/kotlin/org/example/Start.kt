@@ -10,20 +10,20 @@ class Start (val leagues : List<League>){
     private fun leer(){ opcion=readLine() }
 
     fun menuPrincipal(){
-        println("""
-    
-                ═══════════════════════════════════════════════════════
-                    ██████╗  █████╗ ███████╗██╗  ██╗███████╗████████╗
-                    ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔════╝╚══██╔══╝
-                    ██████╔╝███████║███████╗█████╔╝ █████╗     ██║   
-                    ██╔══██╗██╔══██║╚════██║██╔═██╗ ██╔══╝     ██║   
-                    ██████╔╝██║  ██║███████║██║  ██╗███████╗   ██║   
-                    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   
-                    
-                               S I M U L A D O R   P R O
-                ═══════════════════════════════════════════════════════
+        println("")
+        println("""    
+            ═══════════════════════════════════════════════════════
+                ██████╗  █████╗ ███████╗██╗  ██╗███████╗████████╗
+                ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔════╝╚══██╔══╝
+                ██████╔╝███████║███████╗█████╔╝ █████╗     ██║   
+                ██╔══██╗██╔══██║╚════██║██╔═██╗ ██╔══╝     ██║   
+                ██████╔╝██║  ██║███████║██║  ██╗███████╗   ██║   
+                ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   
                 
-                                 🏀 Presiona ENTER 🏀
+                           S I M U L A D O R   P R O
+            ═══════════════════════════════════════════════════════
+            
+                             🏀 Presiona ENTER 🏀
     
     """.trimIndent())
         leer()
@@ -53,7 +53,7 @@ class Start (val leagues : List<League>){
                 menuEquipoL()
                 menuEquipoV()
                 MatchSimulator().simularPartido(Match(equipoL,equipoV))
-                println("  \n ¿JUGAR DE NUEVO?\n ")
+                println("  \n ¿JUGAR DE NUEVO? ")
                 print("\n (S/N) >> ")
                 leer()
                 if (opcion.toString().lowercase() == "s"){
@@ -86,11 +86,17 @@ class Start (val leagues : List<League>){
 
 
     fun menuLiga(){
-        println("  SELECCIONA UNA LIGA\n ---------------------\n")
+        println("""  
+            ═════════════════════════════════════
+            ▓          ELIGE UNA LIGA           ▓                                          
+            ═════════════════════════════════════
+            
+            
+        """.trimMargin())
         val numLigas = leagues.size
 
         for (i in 0 until numLigas){
-            println(" ${i + 1}. ${leagues[i].nombre.uppercase()}")
+            println(" ${i + 1} -  ${leagues[i].nombre.uppercase()}")
         }
 
         println(" x -  VOLVER")
@@ -127,7 +133,8 @@ class Start (val leagues : List<League>){
             println(" ${i + 1} -  ${liga.listaEquipos[i].name} - Ofensiva: ${liga.listaEquipos[i].promedioAtaque()} - Defensiva: ${liga.listaEquipos[i].promedioDefensa()}")
         }
 
-        println(" X -  VOLVER")
+        println("""
+             X -  VOLVER""".trimIndent())
         print("\n>> ")
         leer()
 
@@ -142,7 +149,8 @@ class Start (val leagues : List<League>){
                 return
             }
         }
-        println("\n- Por favor seleccione una opción correcta -\n")
+        println("""
+            \n- Por favor seleccione una opción correcta -\n""".trimIndent())
         menuEquipoL()
     }
 
@@ -182,7 +190,7 @@ class Start (val leagues : List<League>){
     
             ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
             ▓                                                     ▓
-            ▓          ██████╗  █████╗ ███╗   ███╗███████╗        ▓
+            ▓           ██████╗  █████╗ ███╗   ███╗███████╗       ▓
             ▓          ██╔════╝ ██╔══██╗████╗ ████║██╔════╝       ▓
             ▓          ██║  ███╗███████║██╔████╔██║█████╗         ▓
             ▓          ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝         ▓
@@ -196,7 +204,7 @@ class Start (val leagues : List<League>){
             ▓          ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║         ▓
             ▓           ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝         ▓
             ▓                                                     ▓
-            ▓                ★ THANKS FOR PLAYING! ★              ▓
+            ▓               ★ THANKS FOR PLAYING! ★               ▓
             ▓                                                     ▓
             ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
     

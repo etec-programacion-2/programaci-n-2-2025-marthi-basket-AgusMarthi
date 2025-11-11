@@ -26,6 +26,6 @@ class Player(
     }
     override fun toString(): String {
         val promedio = (habilidades.definicion + habilidades.tiro + habilidades.defensa + habilidades.velocidad + habilidades.bloqueo)/5
-        return "\n-- Nombre = $nombre | Edad = $edad | Altura = $altura | Posición = $posicion\n${habilidades.toString()} | Promedio = $promedio"
+        return "-- Nombre = $nombre | Edad = $edad | Altura = $altura | Posición = $posicion\n${habilidades.toString()} | Promedio = $promedio \n"
     }
 }

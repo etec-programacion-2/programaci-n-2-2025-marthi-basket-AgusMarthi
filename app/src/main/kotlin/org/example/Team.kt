@@ -45,7 +45,7 @@ class Team(val name: String) {
     }
 
     override fun toString(): String {
-        return "PLANTILLA: $plantilla \n--------------------------------------------------------------------------------------------------------\n | PROMEDIO OFENSIVO: ${this.promedioAtaque()} | PROMEDIO DEFENSIVO: ${this.promedioDefensa()}"
+        return "\n ${this.name.uppercase()}\n\nPLANTILLA:\n $plantilla \n--------------------------------------------------------------------------------------------------------\n | PROMEDIO OFENSIVO: ${this.promedioAtaque()} | PROMEDIO DEFENSIVO: ${this.promedioDefensa()}"
     }
 
 }
