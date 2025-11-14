@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a148c8d4-587c-41f8-b26a-fcad9325c9c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.kotlin/sessions/kotlin-compiler-5187425408264336212.salive" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/App.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/League.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/League.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Match.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Match.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/MatchSimulator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/MatchSimulator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Player.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/PlayerPosition.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/PlayerPosition.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/PlayerSkills.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/PlayerSkills.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Start.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Start.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Team.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/Team.kt" afterDir="false" />
     </list>

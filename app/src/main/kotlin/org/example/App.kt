@@ -302,6 +302,7 @@ fun main() {
     val acb = League("Liga Endesa ACB 2024")
     acb.agregarEquipos(mutableListOf(realMadrid, barcelona, baskonia, valencia, unica, tenerife, granCanaria, joven, bilbao, murcia, zaragoza, manresa))
 
+    // Inicio del programa
     val comienzo = Start(listOf(nba,acb))
     comienzo.menuPrincipal()
 }
