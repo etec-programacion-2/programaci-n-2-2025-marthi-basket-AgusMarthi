@@ -99,9 +99,10 @@ class MatchSimulator {
         }
 
         // Mostramos el resultado final
-        println("${partido.equipoLocal.name} | ${partido.marcadorL}\n" +
+        println("\n\n${partido.equipoLocal.name} | ${partido.marcadorL}\n" +
                 "============================\n" +
-                "${partido.equipoVisitante.name} | ${partido.marcadorV} \n\n" +
+                "${partido.equipoVisitante.name} | ${partido.marcadorV}\n\n" +
                 "El equipo ganador es: $ganador")
     }
+
 }
