@@ -37,7 +37,7 @@ class Start(val leagues: List<League>) {
      */
     fun menuPrincipal() {
         // Arte ASCII del título del juego
-        println("""    
+        println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + """    
             ═══════════════════════════════════════════════════════
                 ██████╗  █████╗ ███████╗██╗  ██╗███████╗████████╗
                 ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔════╝╚══██╔══╝
@@ -303,4 +303,5 @@ class Start(val leagues: List<League>) {
     
         """)
     }
+
 }
